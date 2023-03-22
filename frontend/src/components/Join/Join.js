@@ -11,7 +11,7 @@ export default function Join({ socket }) {
     e.preventDefault()
     if (userName) {
       localStorage.setItem("userName", userName)
-      socket.emit("newUser", { userName, socketID: socket.id })
+      socket.emit("newUser", { userName, socketID: socket.id, chatId: Math.floor(Math.random() * 1000) })
       navigate("/chat")
     } else {
       alert("Please Enter Name");
